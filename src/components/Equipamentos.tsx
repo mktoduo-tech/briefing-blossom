@@ -35,7 +35,9 @@ import equipSoprador from "@/assets/equip-soprador.jpg";
 import equipTalha from "@/assets/equip-talha.jpg";
 import equipVibrador from "@/assets/equip-vibrador.jpg";
 
-const WHATSAPP_URL = "https://wa.me/5565992779620?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20equipamentos.";
+const getWhatsAppUrl = (equipamento: string) =>
+  `https://wa.me/5565992779620?text=${encodeURIComponent(`Olá, gostaria de mais informações sobre ${equipamento}`)}`;
+
 
 const equipamentos = [
   { nome: "Andaimes e Acessórios", img: equipAndaimes },
