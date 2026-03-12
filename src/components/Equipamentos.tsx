@@ -9,7 +9,7 @@ import equipAspirador from "@/assets/equip-aspirador.png";
 import equipContainer from "@/assets/equip-container.jpg";
 import equipCompactador from "@/assets/equip-compactador.png";
 import equipCompressor from "@/assets/equip-compressor.jpg";
-import equipCortadora from "@/assets/equip-cortadora.jpg";
+import equipCortadora from "@/assets/equip-cortadora.png";
 import equipBombaSapo from "@/assets/equip-bomba-sapo.jpg";
 import equipBombaSubmersivel from "@/assets/equip-bomba-submersivel.jpg";
 import equipDesentupidor from "@/assets/equip-desentupidor.jpg";
