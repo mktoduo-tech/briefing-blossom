@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
 import Diferenciais from "@/components/Diferenciais";
@@ -10,6 +11,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 const Index = () => {
   return (
     <main>
+      <Header />
       <HeroSection />
       <Equipamentos />
       <TrustBar />
