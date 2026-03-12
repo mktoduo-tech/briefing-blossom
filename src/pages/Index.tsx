@@ -11,10 +11,10 @@ const Index = () => {
   return (
     <main>
       <HeroSection />
+      <Equipamentos />
       <TrustBar />
       <Diferenciais />
       <ComoFunciona />
-      <Equipamentos />
       <CTAFinal />
       <Footer />
       <WhatsAppFloat />
