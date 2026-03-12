@@ -89,11 +89,11 @@ const Equipamentos = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {equipamentos.map((eq) => (
             <Card key={eq.nome} className="rounded-sm border-border bg-card hover:border-primary/50 transition-colors overflow-hidden group">
-              <div className="aspect-square bg-muted overflow-hidden">
+              <div className="aspect-square bg-white overflow-hidden flex items-center justify-center">
                 <img
                   src={eq.img}
                   alt={eq.nome}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
