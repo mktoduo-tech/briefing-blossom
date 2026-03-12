@@ -8,7 +8,7 @@ const steps = [
 
 const ComoFunciona = () => {
   return (
-    <section className="py-20 bg-muted">
+    <section id="como-funciona" className="py-20 bg-muted scroll-mt-16">
       <div className="container px-4">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
