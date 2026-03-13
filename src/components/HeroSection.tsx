@@ -77,7 +77,7 @@ const HeroSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10 text-lg px-8 py-7 rounded-xl font-sans font-medium"
+              className="border-secondary-foreground/30 text-secondary-foreground bg-secondary-foreground/5 hover:bg-secondary-foreground/15 text-lg px-8 py-7 rounded-xl font-sans font-semibold"
             >
               <a href="#equipamentos">
                 Ver Equipamentos

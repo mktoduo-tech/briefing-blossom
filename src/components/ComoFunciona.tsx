@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const steps = [
   { num: "01", icon: MessageCircle, title: "Solicite o orçamento", desc: "Entre em contato pelo WhatsApp e diga o que precisa." },
   { num: "02", icon: TruckIcon, title: "Receba o equipamento", desc: "Entregamos na sua obra de forma rápida e segura." },
-  { num: "03", icon: RotateCcw, title: "Devolva quando quiser", desc: "Ao final da locação, recolhemos o equipamento sem burocracia." },
+  { num: "03", icon: RotateCcw, title: "Devolução Simples", desc: "Ao final da locação, recolhemos o equipamento sem burocracia." },
 ];
 
 const ComoFunciona = () => {
