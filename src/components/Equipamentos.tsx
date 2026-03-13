@@ -100,17 +100,17 @@ const Equipamentos = () => {
               viewport={{ once: true }}
               transition={{ delay: (i % 8) * 0.05, duration: 0.4 }}
             >
-              <Card className="rounded-xl border-border/50 bg-card shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 overflow-hidden group h-full flex flex-col">
-                <div className="h-48 bg-muted/30 overflow-hidden flex items-center justify-center relative shrink-0">
+              <Card className="rounded-xl border border-border bg-card shadow-md hover:shadow-xl hover:border-primary/40 transition-all duration-300 overflow-hidden group h-full flex flex-col">
+                <div className="h-48 bg-white overflow-hidden flex items-center justify-center relative shrink-0 border-b border-border/50">
                   <img
                     src={eq.img}
                     alt={eq.nome}
-                    className="w-full h-full object-contain p-3 group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <CardContent className="p-4 flex flex-col flex-1">
+                <CardContent className="p-4 flex flex-col flex-1 bg-card">
                   <h3 className="font-bold text-card-foreground text-sm sm:text-base mb-3 leading-tight min-h-[2.5rem] flex-1">{eq.nome}</h3>
                   <Button asChild variant="outline" size="sm" className="w-full rounded-lg border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground font-sans text-xs sm:text-sm transition-all">
                     <a href={getWhatsAppUrl(eq.nome)} target="_blank" rel="noopener noreferrer">
