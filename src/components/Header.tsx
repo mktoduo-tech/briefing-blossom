@@ -19,7 +19,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-border/30">
       <div className="container flex items-center justify-between h-16 px-4">
         <a href="/" className="flex items-center">
-          <img src={logoJonas} alt="Jonas Locações" className="h-12" />
+          <img src={logoJonas} alt="Jonas Locações" className="h-16" />
         </a>
 
         {/* Desktop nav */}
