@@ -100,7 +100,7 @@ const Equipamentos = () => {
               viewport={{ once: true }}
               transition={{ delay: (i % 8) * 0.05, duration: 0.4 }}
             >
-              <Card className="rounded-xl border border-border bg-card shadow-md hover:shadow-xl hover:border-primary/40 transition-all duration-300 overflow-hidden group h-full flex flex-col">
+              <Card className="rounded-xl border border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:border-primary/40 transition-all duration-300 overflow-hidden group h-full flex flex-col">
                 <div className="h-48 bg-white overflow-hidden flex items-center justify-center relative shrink-0 border-b border-border/50">
                   <img
                     src={eq.img}
