@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-secondary/98 shadow-lg shadow-black/10 backdrop-blur-md" : "bg-secondary/95 backdrop-blur-sm"}`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 bg-secondary shadow-lg shadow-black/10 backdrop-blur-md`}>
       <div className="container flex items-center justify-between h-18 px-4 py-2">
         <a href="/" className="flex items-center">
           <img src={logoJonas} alt="Jonas Locações" className="h-14 md:h-16 transition-all" />
