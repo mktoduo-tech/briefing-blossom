@@ -1,54 +1,104 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const WHATSAPP_URL = "https://wa.me/5565992779620?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-secondary">
-      {/* Diagonal accent */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute -right-20 -top-20 w-[600px] h-[600px] bg-primary rotate-45 rounded-sm" />
-        <div className="absolute -left-40 bottom-0 w-[400px] h-[400px] bg-primary rotate-12 rounded-sm" />
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-secondary">
+      {/* Gradient overlays */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-secondary/80" />
+        <div className="absolute -right-32 -top-32 w-[700px] h-[700px] bg-primary/8 rotate-45 rounded-3xl blur-3xl" />
+        <div className="absolute -left-48 -bottom-20 w-[500px] h-[500px] bg-primary/6 rotate-12 rounded-3xl blur-3xl" />
       </div>
-      {/* Texture overlay */}
-      <div className="absolute inset-0" style={{
-        backgroundImage: `repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 60px,
-          hsla(0,0%,100%,0.02) 60px,
-          hsla(0,0%,100%,0.02) 61px
-        )`
+      
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `linear-gradient(hsl(var(--secondary-foreground)) 1px, transparent 1px),
+                          linear-gradient(90deg, hsl(var(--secondary-foreground)) 1px, transparent 1px)`,
+        backgroundSize: '60px 60px'
       }} />
 
-      <div className="container relative z-10 py-20 px-4">
+      <div className="container relative z-10 py-24 px-4">
         <div className="max-w-3xl">
-          <div className="inline-block bg-primary px-4 py-1 mb-6 rounded-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 gradient-primary px-5 py-2 mb-8 rounded-full"
+          >
+            <span className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse" />
             <span className="text-primary-foreground text-sm font-semibold tracking-wider uppercase font-sans">
               +2 anos no mercado
             </span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-secondary-foreground leading-[1.1] mb-6">
+          </motion.div>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-secondary-foreground leading-[1.05] mb-6 text-balance"
+          >
             Equipamentos para sua obra,{" "}
-            <span className="text-primary">sem complicação</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-secondary-foreground/80 mb-10 max-w-xl font-sans normal-case">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[hsl(var(--primary-glow))]">
+              sem complicação
+            </span>
+          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg sm:text-xl text-secondary-foreground/70 mb-12 max-w-xl font-sans normal-case leading-relaxed"
+          >
             Locação ágil e segura de equipamentos para construção civil. 
             Entrega rápida, pagamento facilitado e atendimento que entende sua necessidade.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-sm font-sans font-bold shadow-lg shadow-primary/30 transition-all hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5"
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2" size={22} />
-              Solicitar Orçamento
-            </a>
-          </Button>
+            <Button
+              asChild
+              size="lg"
+              className="gradient-primary text-primary-foreground text-lg px-10 py-7 rounded-xl font-sans font-bold shadow-primary-glow transition-all hover:shadow-xl hover:-translate-y-1"
+            >
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2" size={22} />
+                Solicitar Orçamento
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10 text-lg px-8 py-7 rounded-xl font-sans font-medium"
+            >
+              <a href="#equipamentos">
+                Ver Equipamentos
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <a href="#equipamentos" className="flex flex-col items-center gap-2 text-secondary-foreground/40 hover:text-secondary-foreground/60 transition-colors">
+          <span className="text-xs font-sans uppercase tracking-widest">Explore</span>
+          <ChevronDown size={20} className="animate-bounce" />
+        </a>
+      </motion.div>
     </section>
   );
 };

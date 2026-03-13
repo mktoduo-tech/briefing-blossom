@@ -1,4 +1,5 @@
 import { MessageCircle, TruckIcon, RotateCcw } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   { num: "01", icon: MessageCircle, title: "Solicite o orçamento", desc: "Entre em contato pelo WhatsApp e diga o que precisa." },
@@ -8,31 +9,44 @@ const steps = [
 
 const ComoFunciona = () => {
   return (
-    <section id="como-funciona" className="py-20 bg-muted scroll-mt-16">
+    <section id="como-funciona" className="py-24 bg-muted scroll-mt-16">
       <div className="container px-4">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className="text-primary font-sans font-semibold text-sm tracking-widest uppercase mb-3 block">Processo</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Como <span className="text-primary">funciona</span>
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto font-sans normal-case">
             Simples e sem burocracia. Em 3 passos sua obra tem o equipamento certo.
           </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        </motion.div>
+        <div className="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto relative">
+          {/* Connecting line */}
+          <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-[2px] bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
+          
           {steps.map((step, i) => (
-            <div key={step.num} className="text-center relative">
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-[60%] w-[80%] border-t-2 border-dashed border-primary/30" />
-              )}
-              <div className="inline-flex items-center justify-center w-24 h-24 rounded-sm bg-secondary mb-6 relative">
-                <span className="absolute -top-3 -right-3 bg-primary text-primary-foreground text-sm font-bold w-8 h-8 flex items-center justify-center rounded-sm font-sans">
+            <motion.div
+              key={step.num}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.5 }}
+              className="text-center relative"
+            >
+              <div className="inline-flex items-center justify-center w-28 h-28 rounded-2xl bg-card border border-border/50 shadow-md mb-6 relative">
+                <span className="absolute -top-3 -right-3 gradient-primary text-primary-foreground text-sm font-bold w-9 h-9 flex items-center justify-center rounded-xl font-sans shadow-sm">
                   {step.num}
                 </span>
-                <step.icon className="text-secondary-foreground" size={36} />
+                <step.icon className="text-primary" size={38} />
               </div>
-              <h3 className="font-bold text-foreground text-xl mb-2">{step.title}</h3>
-              <p className="text-muted-foreground font-sans normal-case text-sm">{step.desc}</p>
-            </div>
+              <h3 className="font-bold text-foreground text-xl mb-3">{step.title}</h3>
+              <p className="text-muted-foreground font-sans normal-case text-sm leading-relaxed max-w-xs mx-auto">{step.desc}</p>
+            </motion.div>
           ))}
         </div>
       </div>
