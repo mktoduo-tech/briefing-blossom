@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoJonas from "@/assets/logo-jonas.png";
@@ -14,26 +14,33 @@ const navItems = [
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-border/30">
-      <div className="container flex items-center justify-between h-16 px-4">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-secondary/98 shadow-lg shadow-black/10 backdrop-blur-md" : "bg-secondary/95 backdrop-blur-sm"}`}>
+      <div className="container flex items-center justify-between h-18 px-4 py-2">
         <a href="/" className="flex items-center">
-          <img src={logoJonas} alt="Jonas Locações" className="h-16" />
+          <img src={logoJonas} alt="Jonas Locações" className="h-14 md:h-16 transition-all" />
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-sans font-medium"
+              className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm font-sans font-medium relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
             >
               {item.label}
             </a>
           ))}
-          <Button asChild size="sm" className="rounded-sm font-sans font-bold">
+          <Button asChild size="sm" className="gradient-primary rounded-md font-sans font-bold shadow-primary-glow hover:shadow-lg transition-all hover:-translate-y-0.5">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-1.5" size={16} />
               Orçamento
@@ -43,7 +50,7 @@ const Header = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-secondary-foreground"
+          className="md:hidden text-secondary-foreground p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -52,26 +59,26 @@ const Header = () => {
       </div>
 
       {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="md:hidden bg-secondary border-t border-border/30 px-4 pb-4 space-y-3">
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-80" : "max-h-0"}`}>
+        <nav className="bg-secondary border-t border-secondary-foreground/10 px-4 pb-4 pt-2 space-y-1">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-secondary-foreground/80 hover:text-primary transition-colors text-sm font-sans font-medium py-2"
+              className="block text-secondary-foreground/80 hover:text-primary hover:bg-secondary-foreground/5 transition-colors text-sm font-sans font-medium py-3 px-3 rounded-md"
             >
               {item.label}
             </a>
           ))}
-          <Button asChild size="sm" className="w-full rounded-sm font-sans font-bold">
+          <Button asChild size="sm" className="w-full gradient-primary rounded-md font-sans font-bold mt-2">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-1.5" size={16} />
               Solicitar Orçamento
             </a>
           </Button>
         </nav>
-      )}
+      </div>
     </header>
   );
 };
