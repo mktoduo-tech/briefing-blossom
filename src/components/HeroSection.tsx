@@ -15,8 +15,8 @@ const HeroSection = () => {
           alt="Jonas Locações - Fachada"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-secondary/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
+        <div className="absolute inset-0 bg-secondary/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/80 via-secondary/50 to-transparent" />
       </div>
 
       <div className="container relative z-10 py-24 px-4">
