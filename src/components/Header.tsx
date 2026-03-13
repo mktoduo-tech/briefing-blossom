@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoJonas from "@/assets/logo-jonas.png";
 
 const WHATSAPP_URL = "https://wa.me/5565992779620?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.";
 
@@ -17,8 +18,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-border/30">
       <div className="container flex items-center justify-between h-16 px-4">
-        <a href="/" className="text-2xl font-bold text-primary font-heading tracking-tight">
-          JONAS LOCAÇÕES
+        <a href="/" className="flex items-center">
+          <img src={logoJonas} alt="Jonas Locações" className="h-12" />
         </a>
 
         {/* Desktop nav */}
