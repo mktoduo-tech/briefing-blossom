@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Instagram } from "lucide-react";
+import logoJonas from "@/assets/logo-jonas.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="container px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-primary mb-2">Jonas Locações</h3>
+            <img src={logoJonas} alt="Jonas Locações" className="h-14 mb-2" />
             <p className="text-secondary-foreground/70 font-sans normal-case text-sm">
               Locação de equipamentos para construção civil. Parceiros no sucesso da sua obra.
             </p>
