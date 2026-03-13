@@ -1,25 +1,23 @@
 import { MessageCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5565992779620?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-secondary">
-      {/* Gradient overlays */}
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-secondary/80" />
-        <div className="absolute -right-32 -top-32 w-[700px] h-[700px] bg-primary/8 rotate-45 rounded-3xl blur-3xl" />
-        <div className="absolute -left-48 -bottom-20 w-[500px] h-[500px] bg-primary/6 rotate-12 rounded-3xl blur-3xl" />
+        <img
+          src={heroBg}
+          alt="Jonas Locações - Fachada"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-transparent" />
       </div>
-      
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `linear-gradient(hsl(var(--secondary-foreground)) 1px, transparent 1px),
-                          linear-gradient(90deg, hsl(var(--secondary-foreground)) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
 
       <div className="container relative z-10 py-24 px-4">
         <div className="max-w-3xl">
@@ -77,7 +75,7 @@ const HeroSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-secondary-foreground/30 text-secondary-foreground bg-secondary-foreground/5 hover:bg-secondary-foreground/15 text-lg px-8 py-7 rounded-xl font-sans font-semibold"
+              className="border-secondary-foreground/40 text-secondary-foreground bg-secondary-foreground/10 hover:bg-secondary-foreground/20 text-lg px-8 py-7 rounded-xl font-sans font-semibold backdrop-blur-sm"
             >
               <a href="#equipamentos">
                 Ver Equipamentos
