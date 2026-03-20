@@ -18,7 +18,7 @@ import equipEsmerilhadeira from "@/assets/equip-esmerilhadeira.jpg";
 import equipEnceradeira from "@/assets/equip-enceradeira.png";
 import equipEscada from "@/assets/equip-escada.jpg";
 import equipGerador from "@/assets/equip-gerador.jpg";
-import equipIdentificadorVazamento from "@/assets/equip-identificador-vazamento.png";
+import equipIdentificadorVazamento from "@/assets/equip-identificador-vazamento.jpg";
 import equipLavadoraGasolina from "@/assets/equip-lavadora-gasolina.jpg";
 import equipLavadoraEletrica from "@/assets/equip-lavadora-eletrica.jpg";
 import equipLixadeiraGirafa from "@/assets/equip-lixadeira-girafa.jpg";
