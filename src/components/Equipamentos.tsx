@@ -26,7 +26,7 @@ import equipMartelete from "@/assets/equip-martelete.jpg";
 import equipSolda from "@/assets/equip-solda.jpg";
 import equipMotobomba from "@/assets/equip-motobomba.jpg";
 import equipRompedor from "@/assets/equip-rompedor.jpg";
-import equipPlacaVibratoria from "@/assets/equip-placa-vibratoria.jpg";
+import equipPlacaVibratoria from "@/assets/equip-placa-vibratoria.webp";
 import equipParafusadeira from "@/assets/equip-parafusadeira.jpg";
 import equipPerfurador from "@/assets/equip-perfurador.jpg";
 import equipPolitriz from "@/assets/equip-politriz.jpg";
