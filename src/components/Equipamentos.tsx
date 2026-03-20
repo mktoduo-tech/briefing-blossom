@@ -12,7 +12,7 @@ import equipCompressor from "@/assets/equip-compressor.jpg";
 import equipCortadora from "@/assets/equip-cortadora.png";
 import equipBombaSapo from "@/assets/equip-bomba-sapo.jpg";
 import equipBombaSubmersivel from "@/assets/equip-bomba-submersivel.png";
-import equipDesentupidor from "@/assets/equip-desentupidor.png";
+import equipDesentupidor from "@/assets/equip-desentupidor.jpg";
 import equipEscoras from "@/assets/equip-escoras.png";
 import equipEsmerilhadeira from "@/assets/equip-esmerilhadeira.jpg";
 import equipEnceradeira from "@/assets/equip-enceradeira.png";
